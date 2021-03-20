@@ -1,1 +1,2 @@
-#  please make sure to change class, method, variable names and value :)
+# Please make sure to change class name, method, variable names and value :)
+ 
