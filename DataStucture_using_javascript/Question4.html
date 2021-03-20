@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        ////4.	Write a Program to reverse a string using stack.
+        // Stack class 
+        class Stack {
+
+            // Array is used to implement stack 
+            constructor() {
+                this.items = [];
+            }
+
+            // Functions to be implemented 
+            // push function 
+            push(element) {
+                // push element into the items 
+                this.items.push(element);
+            }
+
+            // pop function 
+            pop() {
+                // return top most element in the stack 
+                // and removes it from the stack 
+                // Underflow if stack is empty 
+                if (this.items.length == 0)
+                    return "Underflow";
+                return this.items.pop();
+            }
+            isEmpty() {
+                // return true if stack is empty 
+                return this.items.length == 0;
+            }
+
+        }
+        var str ="shubham" //use your string ;)
+        var stack = new Stack();
+            for (let char of str) {
+                stack.push(char);
+            }
+            let reversed = '';
+            //Form the reversed string by accessing each character from the stack
+            while (!stack.isEmpty()) {
+                reversed += stack.pop();
+            }
+
+            //print the reversed string
+            console.log(reversed)
+
+    </script>
+</body>
+
+</html>
