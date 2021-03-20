@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //3.	Write a program to implement stack using Array with PUSH, POP operations
+        class stck {
+                constructor() {
+                    this.data = [];
+                    this.top = 0;
+                }
+                stackpush(element) {
+                    this.data[this.top] = element;
+                    this.top = this.top + 1;
+                }
+                stacklength() {
+                    return this.top;
+                }
+                // peek() {
+                //     return this.data[this.top - 1];
+                // }
+                isEmpty() {
+                    return this.top == 0;
+                }
+                stackpop() {
+                    if (this.isEmpty() == false) {
+                        this.top = this.top - 1;
+                        return this.data.pop(); // last element gets deleted  
+                    }
+                }
+                print() {
+                    var t = this.top - 1;
+                    while (t >= 0) {
+                        console.log(this.data[top]);
+                        t--;
+                    }
+                }
+                
+            //     reverse() {
+            //         this.rev(this.top - 1);
+            //     }
+            //     rev(index) {
+            //         if (index != 0) {
+            //             this.rev(index - 1);
+            //         }
+            //         console.log(this.data[index]);
+            //     }
+            }
+            //obj created
+            var stackObj =new stck();
+            var stackObj2 =new stck();
+            //push
+            stackObj.stackpush(10)
+            stackObj.stackpush(20)
+            stackObj.stackpush(30)
+            console.log(stackObj)
+            console.log("length is"+ " "+stackObj.stacklength())
+
+            console.log("pop is completed")
+            //pop
+            stackObj.stackpop()
+            console.log(stackObj)
+
+
+    </script>
+</body>
+</html>
