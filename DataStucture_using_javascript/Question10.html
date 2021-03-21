@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //10.	Write a Program to reverse stack using queue.
+        /***
+         * 1. pop the value from the stack
+         * 2.add that value to the queue.
+         * 3.repeat setp 1, till stack is not empty
+         * 4 now the stack willbe empty ans queue will actually contain the sequence in which values 
+         * will be poped from the stack
+         * 5. delete a value from he queue  and push it in the stack
+         * 6. repeat step5 till queue is not empty.
+         * */
+
+        class Queue {
+            constructor() {
+                this.items = [];
+            }
+            enqueue(element) {
+
+                this.items.push(element);
+            }
+
+            dequeue() {
+                if (this.isEmpty())
+                    return "Underflow";
+                return this.items.shift();
+            }
+
+            front() {
+                // returns the Front element of 
+                // the queue without removing it. 
+                if (this.isEmpty())
+                    return "No elements in Queue";
+                return this.items[0];
+            }
+            // isEmpty function 
+            isEmpty() {
+                // return true if the queue is empty. 
+                return this.items.length == 0;
+            }
+            // printQueue function 
+            print() {
+            for (let i = 0; i < this.items.length; i++) {
+                console.log(this.items[i])
+            }
+        }
+        }
+
+        // Stack class 
+        class Stack {
+
+            constructor() {
+                this.items = [];
+            }
+
+            push(element) {
+                this.items.push(element);
+            }
+
+            pop() {
+                if (this.items.length == 0)
+                    return "Underflow";
+                return this.items.pop();
+            }
+            peek() {
+                return this.items[this.items.length - 1];
+            }
+
+            isEmpty() {
+                return this.items.length == 0;
+            }
+
+            printStack() {
+                var str = "";
+                for (var i = 0; i < this.items.length; i++)
+                    str += this.items[i] + " ";
+                return str;
+            }
+
+        }
+ 
+
+        //IMPLEMENTATIONS
+        var stack = new Stack();
+        var stackNew = new Stack();
+
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+
+        console.log("Old Stack values are:",stack.printStack());
+
+        //create obj of queue  and pop from stack  and enqueue to queue 
+        var queue = new Queue();
+        //dequeue from queue and create another object of stack and push to new stack
+        var stackItem =0;
+        
+        for (let i=0; i<=stack.items.length+1; i++){
+            stackItem = stack.peek()
+            queue.enqueue(stackItem);
+            stack.pop();
+        }
+        //queue.print()
+        var queueItem = 0;
+
+        for (let i=0; i<=queue.items.length+1; i++ ){
+            queueItem= queue.front();
+            //console.log(queueItem)
+            stackNew.push(queueItem);
+            queue.dequeue();
+        }
+        console.log("New Stack values are:",stackNew.printStack())
+
+        
+
+    </script>
+</body>
+
+</html>
