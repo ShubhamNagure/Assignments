@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    //7.	Write a Program to Implement Linear Queue. 
+        function queue() {
+            this.data = [];
+            this.rear = 0;
+            this.front = 0;
+            this.enqueue = enqueue;
+            this.MaxSize = 10;
+            this.print = print;
+            this.length = length;
+            this.isEmpty = isEmpty;
+            this.dequeue = dequeue;
+
+        }
+        function enqueue(element) {
+            if (this.rear < this.MaxSize) {
+                this.data[this.rear++] = element; //data[0]=10
+
+            }
+
+        }
+        function print() {
+            for (let i = 0; i < this.data.length; i++) {
+                console.log(this.data[i])
+            }
+        }
+        function length() {
+            return this.rear;
+        }
+        function isEmpty() {
+            return this.rear = 0;
+        }
+        function dequeue() {
+            if (this.isEmpty() == false) {
+                this.front = this.front + 1;
+                return this.data.shift();
+            }
+
+        }
+
+        var q = new queue();
+        q.enqueue(10);
+        q.enqueue(20);
+        q.enqueue(30);
+
+        console.log("elements in queue :");
+        q.print();
+        console.log("length of queue :", q.length());
+        console.log("delete one element of queue is :")
+        console.log(q.dequeue())
+        console.log("elements in queue :");
+        q.print();
+
+       //output
+      // elements in queue :
+      // 10
+      // 20
+      // 30
+      // length of queue : 3
+      // delete one element of queue is :
+      // 10
+      // elements in queue :
+      // 20
+      // 30
+
+
+               
+    </script>
+</body>
+</html>
