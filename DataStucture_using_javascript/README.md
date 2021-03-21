@@ -1,2 +1,3 @@
-# Please make sure to change class name, method, variable names and value :)
+# Assignments
+Please share your thoughts on if you have any alternative best way to solve this problems
  
