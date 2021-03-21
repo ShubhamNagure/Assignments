@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //9.	Write a Program to Implement Priority Queue.
+            class QElement {
+                constructor(element, priority) {
+                    this.element = element;
+                    this.priority = priority;
+                }
+            }
+
+ 
+            class PriorityQueue {
+                constructor() {
+                    this.items = [];
+                }
+                enqueue(element, priority) {
+                    var qElement = new QElement(element, priority);
+                    var contain = false;
+
+                    for (var i = 0; i < this.items.length; i++) {
+                        if (this.items[i].priority > qElement.priority) {
+                            this.items.splice(i, 0, qElement);
+                            contain = true;
+                            break;
+                        }
+                    }
+                    if (!contain) {
+                        this.items.push(qElement);
+                    }
+                }
+
+                dequeue() {
+                    if (this.isEmpty())
+                        return "Underflow";
+                    return this.items.shift();
+                }
+
+ 
+                front() {
+                    if (this.isEmpty())
+                        return "No elements in Queue";
+                    return this.items[0];
+                }
+
+                rear() {
+                    if (this.isEmpty())
+                        return "No elements in Queue";
+                    return this.items[this.items.length - 1];
+                }
+
+
+
+                isEmpty() {
+                    return this.items.length == 0;
+                }
+
+                printPQueue() {
+                    var str = "";
+                    for (var i = 0; i < this.items.length; i++)
+                        str += this.items[i].element + " ";
+                    return str;
+                }
+
+                
+
+            }
+                var priorityQueue = new PriorityQueue();
+
+                // testing isEmpty and front on an empty queue 
+                // return true 
+                console.log(priorityQueue.isEmpty());
+
+                // returns "No elements in Queue" 
+                console.log(priorityQueue.front());
+
+                // adding elements to the queue 
+                priorityQueue.enqueue("Vishal", 2);
+                priorityQueue.enqueue("Shubham", 1);
+                priorityQueue.enqueue("Prasanna", 1);
+                priorityQueue.enqueue("Suraj", 2);
+                priorityQueue.enqueue("Abhilash", 3);
+
+                // prints [Shubham Prasanna Vishal Suraj Abhilash ] 
+                console.log(priorityQueue.printPQueue());
+
+                // prints Shubham 
+                console.log(priorityQueue.front().element);
+
+                // pritns Abhilash 
+                console.log(priorityQueue.rear().element);
+
+                // removes Shubham 
+                // priorityQueue contains 
+                // [Prasanna Vishal Suraj Abhilash] 
+                console.log(priorityQueue.dequeue().element);
+
+                // Adding another element to the queue 
+                priorityQueue.enqueue("Pratik", 2);
+
+                // prints [Prasanna Vishal Suraj Pratik Abhilash] 
+                console.log(priorityQueue.printPQueue());
+
+    </script>
+</body>
+</html>
