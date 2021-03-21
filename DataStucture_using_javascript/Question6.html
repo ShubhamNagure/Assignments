@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+	//6.	Write a Program to Implement Stack using Linked List.
+    //TRIEL 3 STRATS HERE
+		class Node {
+				// constructor 
+				constructor(element) {
+					this.element = element;
+					this.next = null
+				}
+			}
+
+
+		class stckUsingLinkedList {
+				constructor() {
+					this.head = null;
+                	this.size = 0;
+				}
+				pushToStack(element) {
+				//Creates a new node
+					var node = new Node(element);
+
+					//to store current node
+					var current;
+					//if list is Empty add the element and make it head
+					if (this.head == null)
+						this.head = node;
+					else {
+						current = this.head;
+
+						//iterate to the end of the list
+						while (current.next) {
+							current = current.next;
+						}
+
+						//add node
+
+						current.next = node;
+					}
+					this.size++
+				}
+			 
+				isEmpty() {
+					return this.size == 0;
+				} 
+			
+				popFromStack() {
+				var current = this.head;
+					if (this.size === 0) {
+						return;
+					}
+					if (this.size === 1) {
+						head = null;
+						size = 0;
+						return current;
+					}
+					var prev = current;
+					while (current.next !== null) {
+						prev = current;
+						current = current.next;
+					}
+					prev.next = null;
+					this.size -= 1;
+					return current;
+				}
+				printStack(){
+				var current = this.head;
+					while (current.next !== null) {
+						console.log("Item " + current.element + " is on the stack.");
+						current = current.next;
+					}
+					console.log("Item "+current.element + " is on the stack.");
+ 				}
+
+		}
+
+		var sull = new stckUsingLinkedList();
+		sull.pushToStack(10); //push it
+		sull.pushToStack(20);
+		sull.pushToStack(30);
+		sull.pushToStack(40);
+		sull.printStack();
+		
+		sull.popFromStack(); //pop it
+		sull.printStack();
+    </script>
+</body>
+</html>
