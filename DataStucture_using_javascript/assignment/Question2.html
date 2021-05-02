@@ -1,0 +1,65 @@
+<html>
+<script>
+class Node { 
+    constructor(data) { 
+        this.data = data;
+		this.left = null;
+        this.right = null;
+    } 
+} 
+class BST { 
+    constructor() { 
+        this.root = null;
+		this.inStr = "";
+		this.preStr = "";
+		this.postStr = "";
+    } 
+	insertEle(node , newNode){
+		if(node == null){
+			return newNode;
+		}
+		else{
+			if(newNode.data < node.data)
+				node.left = this.insertEle(node.left, newNode);
+			else
+				node.right = this.insertEle(node.right, newNode);
+			return node;
+		}
+	}
+	//inserting array of integers in BST
+	addEle(arr){
+		for (var i = 0 ; i < arr.length ; i++)
+			this.root = this.insertEle(this.root,new Node(arr[i]));
+	}
+	inOrder(node = this.root){
+		if(node != null){
+			this.inOrder(node.left);
+			this.inStr += node.data + " ";
+			this.inOrder(node.right);
+		}
+	}
+	preOrder(node = this.root){
+		if(node != null){
+			this.preStr += node.data + " ";
+			this.preOrder(node.left);
+			this.preOrder(node.right);
+		}
+	}
+	postOrder(node = this.root){
+		if(node != null){
+			this.postOrder(node.left);
+			this.postOrder(node.right);
+			this.postStr += node.data + " ";
+		}
+	}
+}
+var ob = new BST();
+ob.addEle(new Array(40,20,50,10,30,60,5,67,78));
+ob.inOrder();
+ob.preOrder();
+ob.postOrder();
+console.log("Inorder: "+ob.inStr);
+console.log("Preorder: "+ob.preStr);
+console.log("Postorder: "+ob.postStr);
+</script>
+</html>
