@@ -1,0 +1,23 @@
+<html>
+<script>
+function binarySearch(arr,l,r,ele){
+	if(l != r){
+		mid = parseInt((l + r)/2);
+		if(arr[mid] == ele)
+			return mid;
+		if(ele < arr[mid])
+			return binarySearch(arr,l,mid-1,ele);
+		else
+			return binarySearch(arr,mid+1,r,ele);
+	}
+	return -1;
+}
+var arr = new Array(2,4,6,7);
+var ele = 6;
+var index = binarySearch(arr,0,arr.length-1,ele);
+if(index != -1)
+	console.log(ele+" found at index: "+index);
+else
+	console.log("Not found!!");	
+</script>
+</html>
