@@ -1,0 +1,20 @@
+<html>
+<script>
+function LinerarSearch(arr, ele){
+	var f = false;
+	var index = null;
+	for(var i = 0 ; i< arr.length ; i++){
+		if(arr[i] == ele){
+			index = i;
+			f = true;
+		}
+	}
+	if (f == true)
+		console.log(ele+" found at index: "+index);
+	else
+		console.log("Not found!!");
+}
+
+LinerarSearch(new Array(1,2,3,4,5),2);
+</script>
+</html>
