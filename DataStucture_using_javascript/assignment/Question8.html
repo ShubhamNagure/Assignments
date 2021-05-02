@@ -1,0 +1,13 @@
+<html>
+<script>
+function fibo(n){
+	if(n <= 1)
+		return n;
+	return fibo(n-1) + fibo(n-2);
+}
+function countStairs(st){
+	return fibo(st+1);
+}
+console.log("Number of ways: ",countStairs(6));
+</script>
+</html>
