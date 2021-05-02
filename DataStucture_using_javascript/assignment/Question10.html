@@ -1,0 +1,21 @@
+<html>
+<script>
+
+function subArray_sum(arr){
+	var max_sum = 0;
+	var sum;
+	for (var i = 0 ; i < arr.length ; i++){
+		sum = 0;
+		for (var j = i ; j < arr.length ; j++){
+			sum += arr[j];
+			if (sum > max_sum)
+				max_sum = sum;
+		}
+	}
+	return max_sum;
+}
+var arr = new Array(-2, 1, 4, -3,-2);
+console.log("Maximum of subarray: "+subArray_sum(arr))
+
+</script>
+</html>
