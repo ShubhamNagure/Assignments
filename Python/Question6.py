@@ -17,3 +17,4 @@ def lenOfDigits(n):
 if __name__ == "__main__":
     n=input('Enter a number:')
     lenOfDigits(int(n))
+    # easyLen(int(n))
