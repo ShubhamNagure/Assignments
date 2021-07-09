@@ -31,10 +31,7 @@ def checkDivByThree(numList):
     """print Divisible by 3 at the place of number"""
     for i in numList:
         if (i%3 ==0):
-            if checkOnlyTwoDiv(numList) == True :
-                print('Nothing')
-            else:
-                print(i , "Divisible by 3")
+            print(i , "Divisible by 3")
 
 def checkDivByFive(numList):
     """ print Divisibleby 5 at the place of number"""
@@ -90,15 +87,15 @@ if __name__ == "__main__" :
     checkDivByThree(listOfNums)
     print('#' * 100)
 
-    # checkDivByFive(listOfNums)
-    # print('#' * 100)
+    checkDivByFive(listOfNums)
+    print('#' * 100)
 
-    # checkDivByTen(listOfNums)
-    # print('#' * 100)
+    checkDivByTen(listOfNums)
+    print('#' * 100)
 
-    # #
-    # checkOnlyTwoDiv(listOfNums)
-    # print('#' * 100)
-    # #
-    # checkDivByAll(listOfNums)
-    # print('#' * 100)
+    #
+    checkOnlyTwoDiv(listOfNums)
+    print('#' * 100)
+    #
+    checkDivByAll(listOfNums)
+    print('#' * 100)
