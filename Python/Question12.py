@@ -5,7 +5,6 @@ def findMaxLen(mylist):
     lenList= []
     for i in mylist:
         lenList.append(len(i))
-    
     lenList.sort()
 
     print("Largest element is:", lenList[-1])
