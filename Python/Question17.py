@@ -9,6 +9,7 @@
 #  number is not divisible by any of (3 , 5 and 10) ,  just print the 
 # number as it is.
 
+
 def checkNum(startNum,stopNum):
     """"accept and check the two +ve integers start and stop"""
     #corner cases
