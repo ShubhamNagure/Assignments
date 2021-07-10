@@ -1,7 +1,6 @@
 """ 12.	Find the length of longest word from the set of words
   entered by the user"""
 
-
 def findMaxLen(mylist):
     lenList= []
     for i in mylist:
