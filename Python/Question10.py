@@ -2,6 +2,8 @@
 Information regarding number of traders and number of transaction is 
 unknown """
 
+__author__ = "Shubham Nagure"
+
 def createList():
     n=1
     nums=[]
