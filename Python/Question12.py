@@ -9,9 +9,6 @@ def findMaxLen(mylist):
 
     print("Largest element is:", lenList[-1])
         
-
-
-
 if __name__ == "__main__":
     statement=input('Enter statement :')
     mylist=[]
