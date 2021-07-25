@@ -3,9 +3,6 @@
 # not prime from 1 to n.
 
 
-from typing import Counter
-
-
 def positiveIntegerOnly():
     goodinput = False
     while not goodinput:
