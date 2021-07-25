@@ -6,6 +6,22 @@
 #  number, catch it with a try/except and put out an appropriate message 
 # and ignore the entered character
 
+# # output
+# Enter a integer: 1
+# Enter a integer: 2
+# Enter a integer: 3
+# Enter a integer: 0
+# Enter a integer: 0
+# Enter a integer: -1
+# Enter a integer: -2
+# Enter a integer: -3
+# Enter a integer: done
+# Number of positive Integers:  3
+# Number of Negetive Integers:  3
+# Number of zeros:  2
+# Average of positive : 2
+# Average of negeive : -2
+
 
 def integerNums():
     redFlag =False
