@@ -9,7 +9,7 @@ from sklearn.metrics import classification_report,confusion_matrix
 
 # In[23]:
 import pandas as pd
-path=r"C:\Users\Admin\Desktop\Iris.csv"
+path=r"/Users/shubham/Desktop/Projects/AIMLKR/clone/Assignments/AI_ML_KR/csv_data/Iris.csv"
 df=pd.read_csv(path)
 #print(df.head(50))
 
